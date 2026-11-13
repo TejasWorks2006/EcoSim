@@ -20,7 +20,12 @@ void Autotroph::update(float dt, Grid& grid, const Quadtree& tree, std::vector<O
 
         float offsetX = (rand() % 30) - 15;
         float offsetY = (rand() % 30) - 15;
-        newEntities.push_back(new Autotroph(x + offsetX, y + offsetY));
+
+        // CLAMP: Guarantee the baby spawns at least 50px away from any edge
+        float spawnX = std::clamp(x + offsetX, 50.0f, (float)WORLD_WIDTH - 50.0f);
+        float spawnY = std::clamp(y + offsetY, 50.0f, (float)WORLD_HEIGHT - 50.0f);
+
+        newEntities.push_back(new Autotroph(spawnX, spawnY));
     }
 }
 

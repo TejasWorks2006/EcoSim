@@ -13,7 +13,6 @@ private:
     Vector2 acceleration;
     float maxForce;
     float changeDirectionTimer;
-    float stalkTimer;
     float burstTimer;
     bool isBursting;
 
@@ -21,10 +20,10 @@ private:
     float chaseRadius;   // Active pursuit distance
     float catchRadius;   // Biting distance
 
-    // Energy thresholds (Your new scaled values)
-    const float CRITICAL_ENERGY = 60.0f;   // Panic threshold
-    const float REPRODUCE_ENERGY = 175.0f; // Very hard to reach
-    const float COMFORT_ENERGY = 100.0f;
+    // Energy thresholds
+    const float CRITICAL_ENERGY = 60.0f;
+    const float REPRODUCE_ENERGY = 350.0f;
+    const float COMFORT_ENERGY = 300.0f;
+    const float MAX_ENERGY = 400.0f;
     const float BURST_COST = 10.0f;
-    const float MAX_ENERGY = 250.0f;       // Add this!
 };

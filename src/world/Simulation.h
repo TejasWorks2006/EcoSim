@@ -2,8 +2,12 @@
 #include "../entities/Organism.h"
 #include "Grid.h"
 #include <vector>
+#include <string> // <-- ADD THIS
 
-const int MAX_POPULATION = 4000;
+// --- INDIVIDUAL POPULATION CAPS ---
+const int MAX_AUTOTROPHS = 400; // Reduced for smaller map
+const int MAX_HERBIVORES = 80;
+const int MAX_CARNIVORES = 15;
 
 class Simulation {
 public:
@@ -13,9 +17,11 @@ public:
     void update(float dt);
     void draw() const;
 
+    // NEW: Check if any species has died out
+    bool checkExtinction(std::string &extinctSpecies) const;
+
 private:
     Grid grid;
     std::vector<Organism*> organisms;
-
     void spawnInitialPopulation();
 };

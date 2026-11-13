@@ -3,8 +3,8 @@
 #include <cstdint>
 #include <vector>
 
-const int WORLD_WIDTH = 1200;
-const int WORLD_HEIGHT = 800;
+const int WORLD_WIDTH = 800;
+const int WORLD_HEIGHT = 600;
 
 class Grid;
 class Quadtree;

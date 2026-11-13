@@ -19,7 +19,7 @@ private:
     int nearbyHerdCount;
 
     // Energy thresholds (Optimized for stable population growth)
-    const float CRITICAL_ENERGY = 20.0f;
-    const float REPRODUCE_ENERGY = 100.0f; // Harder to reach
-    const float MAX_ENERGY = 120.0f;       // Cap to prevent hoarding
+    const float CRITICAL_ENERGY = 40.0f;
+    const float REPRODUCE_ENERGY = 180.0f; // Harder to reach
+    const float MAX_ENERGY = 400.0f;       // Cap to prevent hoarding
 };
